@@ -8,14 +8,14 @@
 </head>
 <body>
     <h1>Create New Template</h1>
-    <form>
+    <form action="/workout" method="POST">
         <label for="name">Name:</label>
         <input type="text" id="name" placeholder="Name of Template">
-        
+
         <input type="submit" value="Add Template">
     </form>
 
-    <a href="workout/:id/exercise">
+    <a href="/workout/exercise">
         <input type="button" value="Add Exercise">
     </a>
 </body>

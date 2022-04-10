@@ -8,7 +8,7 @@ const exerciseSchema = new Schema ({
     },
     bodyPart: {
         type: String,
-        enum: ['Back', 'Biceps', 'Triceps', 'Shoulders', 'Chest', 'Legs', 'Cardio']
+        enum: ['Back', 'Biceps', 'Triceps', 'Shoulders', 'Chest', 'Legs', 'Abs', 'Cardio']
     },
     reps: {
         type: Number,

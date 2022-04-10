@@ -3,7 +3,8 @@ const Workout = require('../models/workout');
 module.exports = {
     index,
     show,
-    showForm
+    showForm,
+    create
 }
 
 function index(req,res) {
@@ -21,5 +22,14 @@ function show(req,res) {
 }
 
 function showForm(req,res) {
-    res.render('workout/:id/exercise')
+    res.render('workout/exercise',
+    {
+        title: 'Add Exercise'
+    })
+}
+
+function create(req,res) {
+    Workout.create(req.body, function(err,workout) {
+        res.redirect(`workout/new`);
+    })
 }

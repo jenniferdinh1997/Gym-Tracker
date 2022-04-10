@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> <%= title %> </title>
+</head>
+<body>
+    <h1>Add Exercise</h1>
+
+    <form action="/workout/new" method="POST">
+        <label for="bodyPart">Body Part:</label>
+        <select name="bodyPart" id="bodyPart">
+            <option value="Back">Back</option>
+            <option value="Biceps">Biceps</option>
+            <option value="Triceps">Triceps</option>
+            <option value="Shoulders">Shoulders</option>
+            <option value="Chest">Chest</option>
+            <option value="Legs">Legs</option>
+            <option value="Abs">Abs</option>
+            <option value="Cardio">Cardio</option>
+        </select>
+
+        <label for="name">Name:</label>
+        <input name="name" type="text" id="name" placeholder="Name of Exercise" autocomplete="off">
+
+        <label for="weight">Weight:</label>
+        <input name="weight" type="number" id="weight" autocomplete="off">
+
+        <label for="reps">Reps:</label>
+        <input name="reps" type="number" id="reps" autocomplete="off">
+
+        <a href="/workout/new">
+            <input type="button" value="Add to Template">
+        </a>
+    </form>
+</body>
+</html>
