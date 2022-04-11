@@ -2,22 +2,14 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const workoutSchema = new Schema ({
-    date: {
-        type: Date,
-        required: true
+    template: {
+        type: Schema.Types.ObjectId, ref: 'Template' // a workout uses one template
     },
-    name: {
-        type: String,
-        required: true
-    },
-    exercise: [{
-        type: Schema.Types.ObjectId, ref: 'Exercise' // many workouts can have many diff exercises
-    }],
     rating: {
         type: Number,
         min: 1,
         max: 5
-    }
-})
+    }},
+    {timestamps: true})
 
 module.exports = mongoose.model('Workout', workoutSchema);

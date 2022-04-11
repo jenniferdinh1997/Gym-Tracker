@@ -11,7 +11,7 @@ const methodOverride = require('method-override');
 const indexRoutes = require('./routes/index');
 const workoutRoutes = require('./routes/workout');
 const historyRoutes = require('./routes/history');
-const exerciseRoutes = require('./routes/exercise');
+const templateRoutes = require('./routes/template');
 
 // load the env consts
 require('dotenv').config();
@@ -58,7 +58,7 @@ app.use(function (req, res, next) {
 app.use('/', indexRoutes); //localhost:3000
 app.use('/workout', workoutRoutes);
 app.use('/history', historyRoutes);
-app.use('/', exerciseRoutes);
+app.use('/', templateRoutes);
 
 // invalid request, send 404 page
 app.use(function(req, res) {

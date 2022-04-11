@@ -14,23 +14,8 @@
         <input type="text" id="name" placeholder="Name of Template">
 
         <input type="submit" value="Add Template">
+
     </form>
-    
-    <table>
-        <% exercise.forEach(function(e) { %> 
-            <th> <%= e.name %> </th>
-            <th> <%= e.bodyPart  %> </th>
-            <th> Weight </th>
-            <th> Reps </th>
-        
-            <tr>
-                <td> &nbsp;</td>
-                <td> &nbsp;</td>
-                <td> <%= e.weight %> </td>
-                <td> <%= e.reps %> </td>
-            </tr>
-        <% }) %>
-    </table>
 
     <a href="/workout/exercise">
         <input type="button" value="Add an Exercise">
