@@ -2,7 +2,8 @@ const Workout = require('../models/workout');
 
 module.exports = {
     index,
-    show
+    show,
+    finish
 }
 
 function index(req,res) {
@@ -17,4 +18,11 @@ function show(req,res) {
     {
         title: 'Start Workout'
     })
+}
+
+function finish(req,res) {
+    res.redirect('/workout/finish',
+    {
+        title: 'Workout Completed!'
+    });
 }
