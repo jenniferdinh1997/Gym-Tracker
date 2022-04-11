@@ -3,7 +3,7 @@ const Template = require('../models/template');
 module.exports = {
     show,
     addEx,
-    createEx
+    // createEx
 }
 
 function show(req,res) {
@@ -20,9 +20,9 @@ function addEx(req,res) {
     })
 }
 
-function createEx(req,res) {
-    Template.exercise.push(req.body);
-    Template.save(function(err){
-        res.redirect('/workout/new')
-    })
-}
+// function createEx(req,res) {
+//     Template.exercise.push(req.body);
+//     Template.save(function(err) {
+//         res.redirect('/workout/new');
+//     })
+// }
