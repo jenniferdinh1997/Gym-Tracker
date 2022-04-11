@@ -1,7 +1,8 @@
 const Workout = require('../models/workout');
 
 module.exports = {
-    index
+    index,
+    show
 }
 
 function index(req,res) {
@@ -9,4 +10,11 @@ function index(req,res) {
     {
         title: 'Choose a Template'
     });
+}
+
+function show(req,res) {
+    res.render('workout/start',
+    {
+        title: 'Start Workout'
+    })
 }
