@@ -7,8 +7,7 @@
     <title> <%= title %> </title>
 </head>
 <body>
-    <h1>Add Exercise</h1>
-
+    <p>Add an Exercise</p>
     <form action="/workout/new" method="POST">
         <label for="bodyPart">Body Part:</label>
         <select name="bodyPart" id="bodyPart">
@@ -31,9 +30,7 @@
         <label for="reps">Reps:</label>
         <input name="reps" type="number" id="reps" autocomplete="off">
 
-        <a href="/workout/new">
-            <input type="button" value="Add to Template">
-        </a>
+        <input type="submit" value="Add to Template">
     </form>
 </body>
 </html>

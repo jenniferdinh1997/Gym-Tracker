@@ -58,7 +58,6 @@ app.use('/', indexRoutes); //localhost:3000
 app.use('/workout', workoutRoutes);
 app.use('/history', historyRoutes);
 
-
 // invalid request, send 404 page
 app.use(function(req, res) {
   res.status(404).send('Cant find that!');

@@ -8,31 +8,32 @@
 </head>
 <body>
     <h1>Create New Template</h1>
-    <form action="/workout" method="POST">
+
+    <form action="/workout" method="POST" autocomplete="off">
         <label for="name">Name:</label>
         <input type="text" id="name" placeholder="Name of Template">
 
-        <table>
-        <% workout.forEach(function(w) { %>
-            <th> <%= w.name %> </th>
-            <th> <%= w.bodyPart  %> </th>
+        <input type="submit" value="Add Template">
+    </form>
+    
+    <table>
+        <% exercise.forEach(function(e) { %> 
+            <th> <%= e.name %> </th>
+            <th> <%= e.bodyPart  %> </th>
             <th> Weight </th>
             <th> Reps </th>
-
+        
             <tr>
                 <td> &nbsp;</td>
                 <td> &nbsp;</td>
-                <td> <%= w.weight %> </td>
-                <td> <%= w.reps %> </td>
+                <td> <%= e.weight %> </td>
+                <td> <%= e.reps %> </td>
             </tr>
         <% }) %>
-        </table>
-
-        <input type="submit" value="Add Template">
-    </form>
+    </table>
 
     <a href="/workout/exercise">
-        <input type="button" value="Add Exercise">
+        <input type="button" value="Add an Exercise">
     </a>
 </body>
 </html>
