@@ -15,5 +15,21 @@
 
     <p>Streak: ___ Weeks</p>
     <h1>History</h1>
+
+    <table>
+        <% workout.forEach(function(w) { %>
+        <tr>
+            <th>Summary:</th>
+            <th> &nbsp;</th>
+        </tr>
+
+        <tr>
+            <td><%= w.date %></td>
+            <td><%= w.workoutName %></td>
+            <td><a href="/workout/ <%= w._id %>">See Workout Details</a> </td>
+        </tr>
+        <% }); %> 
+    </table>
+
 </body>
 </html>

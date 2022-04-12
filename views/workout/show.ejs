@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> <%= title %> </title>
+</head>
+<body>
+    <h1>Workout Details</h1>
+
+    <% workout.forEach(function(w) { %>
+
+    <table class="details">
+        <tr>
+            <th><%= w.date %></th>
+            <th><%= w.workoutName %></th>
+            <th> </th>
+            <th>Destinations:</th>
+        </tr>
+
+        <tr>
+            <td><%= w.exerciseName %> </td>
+            <td> &nbsp; </td>
+        </tr>
+
+        <tr>
+            <td><%= w.weight %></td>
+            <td><%= w.reps %> </td>
+        </tr>
+    </table>
+
+    <% }) %>
+
+    <form action="/workout/<%= workout._id %>?_method=DELETE" method="POST">
+        <input type="submit" value="Delete Workout">
+    </form>
+</body>
+</html>

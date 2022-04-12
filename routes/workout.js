@@ -3,8 +3,11 @@ const router = express.Router();
 const workoutCtrl = require('../controllers/workout');
 
 //localhost:3000/workout
-router.get('/', workoutCtrl.index);
-router.get('/start', workoutCtrl.show);
-router.post('/finish', workoutCtrl.finish);
+router.get('/new', workoutCtrl.index);
+router.post('/', workoutCtrl.new);
+router.get('/finish', workoutCtrl.finishPage);
+router.get('/history', workoutCtrl.pastIndex);
+router.delete('/history', workoutCtrl.delete);
+router.get('/:id', workoutCtrl.show);
 
 module.exports = router;

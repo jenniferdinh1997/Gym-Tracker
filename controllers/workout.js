@@ -2,27 +2,57 @@ const Workout = require('../models/workout');
 
 module.exports = {
     index,
+    new: newWorkout,
+    finishPage,
+    pastIndex,
     show,
-    finish
+    delete: deleteWorkout
 }
 
 function index(req,res) {
-    res.render('workout/index', 
-    {
-        title: 'Choose a Template'
-    });
-}
-
-function show(req,res) {
-    res.render('workout/start',
+    res.render('workout/new',
     {
         title: 'Start Workout'
     })
 }
 
-function finish(req,res) {
-    res.redirect('/workout/finish',
+function newWorkout(req,res) {
+    const workout = new Workout(req.body);
+    workout.save(function(err) {
+        res.redirect('/workout/finish');
+    })
+}
+
+function finishPage(req,res) {
+    res.render('workout/finish',
     {
         title: 'Workout Completed!'
-    });
+    })
+}
+
+function pastIndex(req,res) {
+    Workout.find({}, function(err, workout) {
+        res.render('workout/history',
+        {
+            title: 'History',
+            workout
+        })
+    })
+}
+
+function show(req,res) {
+    Workout.findById(req.params.id, function(err, workout) {
+        console.log(workout);
+        res.render('workout/show',
+        {
+            title: 'Workout Details',
+            workout
+        });
+    })
+}
+
+function deleteWorkout(req,res) {
+    Workout.findByIdAndDelete(req.params.id, function(err, workout) {
+        res.redirect('/workout/history');
+    })
 }
