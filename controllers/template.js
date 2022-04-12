@@ -2,30 +2,29 @@ const Template = require('../models/template');
 
 module.exports = {
     show,
-    addEx,
-    createEx
+    createEx,
+    add
 }
 
 function show(req,res) {
-    res.render('workout/new',
-    {
-        title: 'Create New Template'
-    })
-}
-
-function addEx(req,res) {
-    res.render('exercise/new',
-    {
-        title: 'Add an Exercise',
+    Template.find({}, function(err, templates) {
+        res.render('workout/new',
+        {
+            title: 'Create New Template',
+            templates
+        })
     })
 }
 
 function createEx(req,res) {
-    const template = new Template(req.body);
-    console.log(req.body);
-    template.exercise.push(req.body);
-    template.save(function(err) {
-        console.log(template.exercise);
+    Template.create(req.body, function(err, templates) {
         res.redirect('/workout/new');
+    })
+}
+
+function add(req,res) {
+    Template.create(req.body, function(err, templates) {
+        console.log(req.body);
+        res.redirect('/workout');
     })
 }

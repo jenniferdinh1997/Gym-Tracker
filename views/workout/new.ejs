@@ -5,7 +5,38 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> <%= title %> </title>
+
+    <script>
+        const exercisesObject = {
+        'Back': ['Barbell Row', 'Pull Up', 'Lat Pulldown', 'Seated Row'],
+        'Biceps': ['Bicep Curl', 'Hammer Curl', 'Preacher Curl'],
+        'Triceps': ['Tricep Extension', 'Skullcrusher', 'Tricep Dip'],
+        'Shoulders': ['Shoulder Press', 'Lateral Raise'],
+        'Chest': ['Bench Press', 'Chest Fly', 'Push Up'],
+        'Legs': ['Squat', 'Deadlift', 'Hip Thrust', 'Lunge'],
+        'Abs': ['Sit Up'],
+        'Cardio': ['Running', 'Stairmaster', 'Walking', 'Jump Rope']
+        }
+
+    window.onload = function() {
+        let bodyPart = document.getElementById('bodyPart');
+        let exerciseOp = document.getElementById('exercise');
+
+        for (const x in exercisesObject) {
+            bodyPart.options[bodyPart.options.length] = new Option(x,x); // creates new option element with displayed text "x" and a value of "x"
+        }
+
+        bodyPart.onchange=function() {
+            exerciseOp.length=1; // keeps exercise section clear until we choose
+            var y = exercisesObject[bodyPart.value]; // y is the array corresponding to the value of the body part you chose
+            for (let i=0; i<y.length; i++) {
+                exerciseOp.options[exerciseOp.options.length] = new Option(y[i], y[i]);
+                }
+            }
+        }
+    </script>
 </head>
+
 <body>
     <h1>Create New Template</h1>
 
@@ -13,15 +44,15 @@
         <label for="name">Name:</label>
         <input type="text" id="name" placeholder="Name of Template">
 
-        <input type="submit" value="Add Template">
-
         <table>
-            <% template.forEach(function(t) { %> 
-                <th> <%= t.exerciseName %> </th>
-                <th> <%= t.bodyPart  %> </th>
-                <th> Weight </th>
-                <th> Reps </th>
-            
+            <% templates.forEach(function(t) { %> 
+                <tr>
+                    <th> <%= t.exerciseName %> </th>
+                    <th> <%= t.bodyPart %> </th>
+                    <th> Weight </th>
+                    <th> Reps </th>
+                </tr>
+
                 <tr>
                     <td> &nbsp;</td>
                     <td> &nbsp;</td>
@@ -30,10 +61,29 @@
                 </tr>
             <% }) %>
         </table>
+
+        <input type="submit" value="Add Template">
+
     </form>
 
-    <a href="/workout/exercise">
-        <input type="button" value="Add an Exercise">
-    </a>
+    <p>Add an Exercise</p>
+    <form action="/workout/new" method="POST">
+      
+        <select name="bodyPart" id="bodyPart">
+            <option value="" selected="selected">Body Part</option>
+        </select>
+
+        <select name="exerciseName" id="exercise">
+            <option value="" selected="selected">Exercise</option>
+        </select>
+
+        <label for="weight">Weight:</label>
+        <input name="weight" type="number" id="weight" autocomplete="off">
+
+        <label for="reps">Reps:</label>
+        <input name="reps" type="number" id="reps" autocomplete="off">
+
+        <input type="submit" value="Add to Template">
+    </form>
 </body>
 </html>

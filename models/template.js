@@ -1,7 +1,11 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const exerciseSchema = new Schema ({
+const templateSchema = new Schema ({
+    templateName: {
+        type: String,
+        required: true
+    },
     exerciseName: {
         type: String,
         required: true
@@ -11,20 +15,11 @@ const exerciseSchema = new Schema ({
         enum: ['Back', 'Biceps', 'Triceps', 'Shoulders', 'Chest', 'Legs', 'Abs', 'Cardio']
     },
     reps: {
-        type: Number,
-        required: true
+        type: Number
     },
     weight: {
-        type: Number,
-        required: true
+        type: Number
     }
-})
-
-const templateSchema = new Schema ({
-    name: {
-        type: String
-    },
-    exercise: [exerciseSchema] // one template contains many exercises
 })
 
 module.exports = mongoose.model('Template', templateSchema);
