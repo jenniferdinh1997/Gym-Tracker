@@ -1,13 +1,37 @@
 html {
     font-family: 'Fjalla One', sans-serif;
+    width: 100%;
+    height: 100%;
+}
+
+.main {
+    background: linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5);
+    position:relative;
+    width:100%;
+    padding: 50px;
+}
+
+.main:after {
+    position:absolute;
+    content:'';
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    right:0;
+    background:inherit;
+    transform-origin: top right;
+    transform:skewY(-15deg);
+    z-index: -1;
 }
 
 h1 {
-    text-align: center;
+    margin-left: 5%;
+    margin-top: 10%;  
 }
 
 h2 {
-    text-align: center;
+    margin-left: 5%;
 }
 
 .login {
@@ -37,7 +61,7 @@ h2 {
     left: 0;
     display: block;
     border-radius: 50px;
-    background: #b1dae7;
+    background: white;
     width: 45px;
     height: 45px;
     transition: all 0.3s ease;
@@ -49,7 +73,7 @@ h2 {
     font-size: 18px;
     font-weight: 700;
     letter-spacing: 0.05em;
-    color: #234567;
+    color: #162b41;
    }
    
 .enter svg {
@@ -67,7 +91,7 @@ h2 {
    
 .enter:hover:before {
     width: 100%;
-    background: #b1dae7;
+    background: white;
    }
    
 .enter:hover svg {
@@ -81,4 +105,9 @@ h2 {
 #menu {
     display: flex;
     flex-direction: column;
+    margin-left: 5%;
+}
+
+p {
+    margin-left: 5%;
 }

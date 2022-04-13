@@ -11,33 +11,35 @@
     <title>Home</title>
 </head>
 <body>
-    <h1>Worth the Weight</h1>
-    <h2>A fitness tracking app that will help keep you accountable and give results that are worth the <i>weight</i></h2>
-    <img src="/images/bench.png">
+    <div class="main">
+        <h1>Worth the Weight</h1>
+        <h2>A fitness tracking app that will help keep you accountable</h2>
+        <h2>and give results that are worth the <i>weight</i></h2>
 
-    <% if (user) { %> 
-    <div id="menu">
-        <a href="/workout/new">
-            <button class="enter">
-                <span>Start a Workout</span>
-                <svg viewBox="0 0 13 10" height="10px" width="15px">
-                <path d="M1,5 L11,5"></path>
-                <polyline points="8 1 12 5 8 9"></polyline>
-                </svg>
-            </button>
-        </a>
+        <% if (user) { %> 
+        <div id="menu">
+            <a href="/workout/new">
+                <button class="enter">
+                    <span>Start a Workout</span>
+                    <svg viewBox="0 0 13 10" height="10px" width="15px">
+                    <path d="M1,5 L11,5"></path>
+                    <polyline points="8 1 12 5 8 9"></polyline>
+                    </svg>
+                </button>
+            </a>
 
-        <a href="/workout/history">
-            <button class="enter">
-                <span>See Past Workouts</span>
-                <svg viewBox="0 0 13 10" height="10px" width="15px">
-                <path d="M1,5 L11,5"></path>
-                <polyline points="8 1 12 5 8 9"></polyline>
-                </svg>
-            </button>
-        </a>
+            <a href="/workout/history">
+                <button class="enter">
+                    <span>See Past Workouts</span>
+                    <svg viewBox="0 0 13 10" height="10px" width="15px">
+                    <path d="M1,5 L11,5"></path>
+                    <polyline points="8 1 12 5 8 9"></polyline>
+                    </svg>
+                </button>
+            </a>
+        </div>
+        <p>Current Streak: ____ Weeks</p>
     </div>
-    <p>Current Streak: ____ Weeks</p>
     <% } else { %> 
     <a href="/auth/google" class="login"><img src="https://i.imgur.com/FHjYyi0.png">LOG IN</a>
     <% } %>
