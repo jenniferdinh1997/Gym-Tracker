@@ -42,7 +42,7 @@ function pastIndex(req,res) {
 
 function show(req,res) {
     Workout.findById(req.params.id, function(err, workout) {
-        console.log(workout);
+        console.log(workout, 'hello');
         res.render('workout/show',
         {
             title: 'Workout Details',
@@ -52,7 +52,7 @@ function show(req,res) {
 }
 
 function deleteWorkout(req,res) {
-    Workout.findByIdAndDelete(req.params.id, function(err, workout) {
+    Workout.findOneAndDelete({_id: req.params.id}, function(err, workout) {
         res.redirect('/workout/history');
     })
 }
