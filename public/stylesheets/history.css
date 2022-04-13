@@ -5,33 +5,12 @@ html {
     background: linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5);
 }
 
-.dumbbell {
-    position: absolute;
-    right: 15%;
-    top: 20%;
-}
-
-h1 {
-    margin-left: 5%;
-    margin-top: 10%;  
-    color: #234567;
-}
-
-h3 {
-    margin-left: 5%;
-    color: #234567
-}
-
-.login {
+nav {
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction:row;
     align-items: center;
-    height: 35px;
-  }
-  
-  .login img {
-    height: 35px;
-  }
+    justify-content: flex-end;
+}
 
 .enter {
     position: relative;
@@ -90,12 +69,6 @@ h3 {
     transform: scale(0.95);
    }
 
-#menu {
-    display: flex;
-    flex-direction: column;
-    margin-left: 5%;
-}
-
-p {
-    margin-left: 5%;
+h1 {
+    text-align: center;
 }

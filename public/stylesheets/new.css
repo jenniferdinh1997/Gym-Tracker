@@ -109,10 +109,3 @@ input[type=submit] {
   margin-bottom: 10px;
   margin-top: 10px;
 }
-
-.progress > input[type=submit] {
-    font-size: small;
-    box-sizing: content-box;
-    width: fit-content;
-    padding: 5px;
-}

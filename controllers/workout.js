@@ -21,7 +21,7 @@ function newWorkout(req,res) {
     req.body.date = `${d.substr(5, 2)}-${d.substr(8, 2)}-${d.substr(0, 4)}`;
     const workout = new Workout(req.body)
     workout.save(function(err) {
-        res.redirect('/workout/history');
+        res.redirect('/workout/finish');
     })
 }
 
