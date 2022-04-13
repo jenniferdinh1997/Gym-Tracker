@@ -1,6 +1,6 @@
 const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
-//Require your User Model here!
+const User = require('../models/user');
 
 // configuring Passport!
 passport.use(new GoogleStrategy({
@@ -9,8 +9,7 @@ passport.use(new GoogleStrategy({
     callbackURL: process.env.GOOGLE_CALLBACK
   },
   function(accessToken, refreshToken, profile, cb) {
-    // a user has logged in via OAuth!
-    // refer to the lesson plan from earlier today in order to set this up
+
 
   }
 ));
