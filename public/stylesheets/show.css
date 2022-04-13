@@ -74,45 +74,33 @@ h1 {
 }
 
 input[type=submit] {
- background-color: #b1dae7;
- border: 1px solid transparent;
- border-radius: .75rem;
- box-sizing: border-box;
- color: #162b41;
- flex: 0 0 auto;
- font-size: 1.125rem;
- font-weight: 600;
- line-height: 1.5rem;
- padding: .75rem 1.2rem;
- text-align: center;
- text-decoration: none #6B7280 solid;
- text-decoration-thickness: auto;
- transition-duration: .2s;
- transition-property: background-color,border-color,color,fill,stroke;
- transition-timing-function: cubic-bezier(.4, 0, 0.2, 1);
- user-select: none;
- -webkit-user-select: none;
- touch-action: manipulation;
- width: auto;
-}
-
-#addWork {
+    background-color: #b1dae7;
+    border: 1px solid transparent;
+    border-radius: .75rem;
+    box-sizing: border-box;
+    color: #162b41;
+    font-size: 1.125rem;
+    font-weight: 600;
+    line-height: 1.5rem;
+    padding: .75rem 1.2rem;
     text-align: center;
-    font-size: 4vh;
+    text-decoration: none #6B7280 solid;
+    margin-left: auto;
+    margin-right: auto;
+   }
+
+form {
+    text-align: center;
 }
 
-.exercise1,.exercise2,.exercise3,.exercise4 {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-evenly;
-  margin-bottom: 10px;
-  margin-top: 10px;
-  color: #162b41;
-}
-
-select {
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    font-family: 'Fjalla One', sans-serif;
-    font-size: large;
+table {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    color: #162b41;
+    border-collapse: separate;
+    text-align: center;
+    border: 1px solid #162b41;
+    border-radius: 15px;
+    border-spacing: 15px;
 }

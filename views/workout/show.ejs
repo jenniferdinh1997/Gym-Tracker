@@ -4,9 +4,35 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/show.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
     <title> <%= title %> </title>
 </head>
 <body>
+    <nav>
+        <a href="/">
+            <button class="enter">
+                <span>Home</span>
+                <svg viewBox="0 0 13 10" height="10px" width="15px">
+                <path d="M1,5 L11,5"></path>
+                <polyline points="8 1 12 5 8 9"></polyline>
+                </svg>
+            </button>
+        </a>
+
+        <a href="/workout/history">
+            <button class="enter">
+                <span>See Past Workouts</span>
+                <svg viewBox="0 0 13 10" height="10px" width="15px">
+                <path d="M1,5 L11,5"></path>
+                <polyline points="8 1 12 5 8 9"></polyline>
+                </svg>
+            </button>
+        </a>
+
+        <img src="https://cdn-icons-png.flaticon.com/512/2307/2307887.png" width="80">
+    </nav>
+
     <h1>Workout Details</h1>
 
     <table class="details">
@@ -17,18 +43,22 @@
         </tr>
 
         <tr>
-            <td><%= workout.exerciseName %> </td>
+            <td><%= workout.exerciseName %></td>
             <td> &nbsp; </td>
         </tr>
 
         <tr>
             <td><%= workout.weight %></td>
-            <td><%= workout.reps %> </td>
+            <td><%= workout.reps %></td>
+        </tr>
+
+        <tr>
+            <td>Rating: <%= workout.rating %></td>
         </tr>
     </table>
 
     <form action="/workout/<%= workout._id %>?_method=DELETE" method="POST">
-        <input type="submit" value="Delete Workout">
+       <input type="submit" value="Delete Workout">
     </form>
 </body>
 </html>
