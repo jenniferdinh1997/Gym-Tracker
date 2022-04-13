@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/new.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
     <title> <%= title %> </title>
 
     <script>
@@ -46,13 +48,31 @@
 <body>
     <nav>
         <a href="/">
-            <input type="button" id="home" value="Home">
+            <button class="enter">
+                <span>Home</span>
+                <svg viewBox="0 0 13 10" height="10px" width="15px">
+                <path d="M1,5 L11,5"></path>
+                <polyline points="8 1 12 5 8 9"></polyline>
+                </svg>
+            </button>
         </a>
+
+        <a href="/workout/history">
+            <button class="enter">
+                <span>See Past Workouts</span>
+                <svg viewBox="0 0 13 10" height="10px" width="15px">
+                <path d="M1,5 L11,5"></path>
+                <polyline points="8 1 12 5 8 9"></polyline>
+                </svg>
+            </button>
+        </a>
+
+        <img src="https://cdn-icons-png.flaticon.com/512/2307/2307887.png" width="80">
     </nav>
 
     <h1>Start a Workout</h1>
 
-    <form action="/workout" method="POST" autocomplete="off">
+    <form action="/workout" method="POST" autocomplete="off" id="addWork">
         <label for="name">Name:</label>
         <input type="text" name="workoutName" id="name" placeholder="Name of Template" autocomplete="off">
 
@@ -122,6 +142,11 @@
             <input id="star4" name="rating" type="radio" value="4"/>
             <label for="star5">5</label>
             <input id="star5" name="rating" type="radio" value="5"/>
+        </div>
+
+        <div class="progress">
+            <input type="file">
+            <input type="submit" value="Upload Progress Photo">
         </div>
 
         <input type="submit" value="Finish Workout">

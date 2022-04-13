@@ -11,12 +11,18 @@
     <title>Home</title>
 </head>
 <body>
-    <div class="main">
+    <% if(!user) { %> 
+    <nav>
+        <a href="/auth/google" class="login"><img src="https://i.imgur.com/FHjYyi0.png"> LOG IN </a>
+    </nav>
+    <% } %> 
+
         <h1>Worth the Weight</h1>
         <h2>A fitness tracking app that will help keep you accountable</h2>
         <h2>and give results that are worth the <i>weight</i></h2>
+        <img src="https://cdn-icons-png.flaticon.com/512/2307/2307887.png" width="300" class="dumbbell">
 
-        <% if (user) { %> 
+    <% if(user) { %> 
         <div id="menu">
             <a href="/workout/new">
                 <button class="enter">
@@ -39,9 +45,7 @@
             </a>
         </div>
         <p>Current Streak: ____ Weeks</p>
-    </div>
-    <% } else { %> 
-    <a href="/auth/google" class="login"><img src="https://i.imgur.com/FHjYyi0.png">LOG IN</a>
-    <% } %>
+    <% } %> 
+ 
 </body>
 </html>
