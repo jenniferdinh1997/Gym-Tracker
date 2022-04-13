@@ -19,7 +19,7 @@
         }
 
     window.onload = function() {
-        let bodyParts = document.querySelectorAll('.bodyPart');
+        let bodyParts = document.querySelectorAll('.bodyPart'); 
         let exerciseOps = document.querySelectorAll('.exercise');
 
         for (const x in exercisesObject) {
@@ -49,7 +49,7 @@
             <input type="button" id="home" value="Home">
         </a>
     </nav>
-    
+
     <h1>Start a Workout</h1>
 
     <form action="/workout" method="POST" autocomplete="off">
@@ -85,19 +85,6 @@
         </div>
 
         <div class="exercise3">
-            <select name="bodyPart" class="bodyPart">
-                <option value="" selected="selected">Body Part</option>
-            </select>
-            <select name="exerciseName" class="exercise">
-                <option value="" selected="selected">Exercise</option>
-            </select>
-            <label for="weight">Weight:</label>
-            <input name="weight" type="number" class="weight" autocomplete="off">
-            <label for="reps">Reps:</label>
-            <input name="reps" type="number" class="reps" autocomplete="off">
-        </div>
-
-        <div class="exercise4">
             <select name="bodyPart" class="bodyPart">
                 <option value="" selected="selected">Body Part</option>
             </select>

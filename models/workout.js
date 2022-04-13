@@ -9,20 +9,17 @@ const workoutSchema = new Schema ({
         type: Date
     },
     exerciseName: {
-        type: String,
-        required: true
+        type: Array
     },
     bodyPart: {
-        type: String,
-        enum: ['Back', 'Biceps', 'Triceps', 'Shoulders', 'Chest', 'Legs', 'Abs', 'Cardio']
+        type: Array
+    //     enum: ['Back', 'Biceps', 'Triceps', 'Shoulders', 'Chest', 'Legs', 'Abs', 'Cardio']
     },
     reps: {
-        type: Number,
-        required: true
+        type: Array
     },
     weight: {
-        type: Number,
-        required: true
+        type: Array
     },
     rating: {
         type: Number,
