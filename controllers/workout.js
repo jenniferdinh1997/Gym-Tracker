@@ -18,6 +18,8 @@ function index(req,res) {
 
 function newWorkout(req,res) {
     const workout = new Workout(req.body);
+    const d = req.body.date;
+    req.body.date = `${d.substr(5, 2)}-${d.substr(8, 2)}-${d.substr(0, 4)}`;
     workout.save(function(err) {
         res.redirect('/workout/finish');
     })
