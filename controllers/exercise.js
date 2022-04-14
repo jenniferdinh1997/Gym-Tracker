@@ -2,7 +2,7 @@ const Workout = require('../models/workout');
 
 module.exports = {
     create,
-    edit
+    delete: deleteItems
 }
 
 function create(req,res) {
@@ -19,12 +19,17 @@ function create(req,res) {
     })
 }
 
-function edit(req,res) {
-    Workout.findById(req.params.id, function(err,workout) {
-        res.render('workout/edit',
-        {
-            title: 'Edit Workout',
-            workout
-        });
+function deleteItems(req,res) {
+    // Workout.findByIdAndDelete(req.params.id, function(err,workout) {
+    //     res.redirect(`workout/${workout._id}`)
+    // })
+    console.log('delete method');
+    Workout.findOne({'exercises._id': req.params.id}, function(err, workout) {
+        console.log('workout found', workout)
+        const exercise = workout.exercises.id(req.params.id)
+        exercise.remove()
+        workout.save(function(err) {
+            res.redirect(`workout/${workout._id}`)
+        })
     })
 }
