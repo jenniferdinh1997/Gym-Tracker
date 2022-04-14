@@ -7,7 +7,7 @@ router.get('/new', workoutCtrl.index);
 router.post('/', workoutCtrl.new);
 router.get('/finish', workoutCtrl.finish);
 router.get('/history', workoutCtrl.pastIndex);
-router.delete('/:id', workoutCtrl.delete);
 router.get('/:id', workoutCtrl.show);
+router.delete('/:id', workoutCtrl.delete);
 
 module.exports = router;

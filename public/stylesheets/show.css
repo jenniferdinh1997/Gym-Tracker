@@ -73,16 +73,20 @@ h1 {
     text-align: center;
 }
 
-input[type=submit] {
+h3 {
+    text-align: center;
+}
+
+input[type=submit], .edit {
     background-color: #b1dae7;
     border: 1px solid transparent;
     border-radius: .75rem;
     box-sizing: border-box;
     color: #162b41;
-    font-size: 1.125rem;
+    font-size: 1 rem;
     font-weight: 600;
     line-height: 1.5rem;
-    padding: .75rem 1.2rem;
+    padding: 10px;
     text-align: center;
     text-decoration: none #6B7280 solid;
     margin-left: auto;
@@ -103,4 +107,15 @@ table {
     border: 1px solid #162b41;
     border-radius: 15px;
     border-spacing: 15px;
+}
+
+.header {
+    margin-bottom: 15px;
+}
+
+.bottom {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
 }

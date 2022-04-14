@@ -13,7 +13,7 @@ html {
 
 h1 {
     margin-left: 5%;
-    margin-top: 10%;  
+    margin-top: 15%;  
     color: #234567;
 }
 
@@ -61,7 +61,7 @@ h3 {
     font-size: 18px;
     font-weight: 700;
     letter-spacing: 0.05em;
-    color: #162b41;
+    color: #3f658a;
    }
    
 .enter svg {

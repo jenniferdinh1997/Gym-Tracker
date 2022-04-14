@@ -71,30 +71,35 @@
 
     <h1>Workout Details</h1>
 
-    <table class="details">
+    <table class="header">
         <tr>
             <th><%= workout.date %></th>
             <th><%= workout.workoutName %></th>
-    
-        </tr>
-
-        <tr>
-            <td><%= workout.exerciseName %></td>
-            <td> &nbsp; </td>
-        </tr>
-
-        <tr>
-            <td><%= workout.weight %></td>
-            <td><%= workout.reps %></td>
-        </tr>
-
-        <tr>
-            <td>Rating: <%= workout.rating %></td>
+            <th>Rating: <%= workout.rating %> </th>
         </tr>
     </table>
 
-    <h2>Add an Exercise</h2>
-    <form action="/workout/<% workout._id %>/exercise" method="POST" autocomplete="off">
+    <table>
+        <tr>
+            <th>Body Part</th>
+            <th>Exercise</th>
+            <th>Weight (lbs)</th>
+            <th>Reps</th>
+        </tr>
+        <% workout.exercises.forEach(function(e) { %>
+        <tr>
+            <form id="exercisess">
+                <td><%= e.bodyPart %></td>
+                <td><%= e.exerciseName %></td>
+                <td><%= e.weight %></td>
+                <td><%= e.reps %></td>
+            </form>
+        </tr>
+        <% }); %>
+    </table>
+
+    <h3>Add an Exercise</h3>
+    <form action="/workout/<%= workout._id %>/exercise" method="POST" autocomplete="off">
         <select name="bodyPart" class="bodyPart">
             <option value="" selected="selected">Body Part</option>
         </select>
@@ -108,8 +113,14 @@
         <input type="submit" value="Add Exercise">
     </form>
 
-    <form action="/workout/<%= workout._id %>?_method=DELETE" method="POST">
-       <input type="submit" value="Delete Workout">
-    </form>
+    <div class="bottom">
+        <a href="/exercise/<%= workout._id %>/edit">
+            <button class="edit">Edit Workout</button>
+        </a>
+
+        <form action="/workout/<%= workout._id %>?_method=DELETE" method="POST">
+        <input type="submit" value="Delete Workout">
+        </form>
+    </div>
 </body>
 </html>
