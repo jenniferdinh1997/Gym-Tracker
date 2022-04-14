@@ -2,6 +2,15 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const workoutSchema = new Schema ({
+    user: {
+        type: Schema.Types.ObjectId, ref: 'User'
+    },
+    userName: {
+        type: String
+    },
+    userAvatar: {
+        type: String
+    },
     workoutName: {
         type: String
     },

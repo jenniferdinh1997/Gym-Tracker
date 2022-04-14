@@ -3,7 +3,7 @@ const Workout = require('../models/workout');
 module.exports = {
     index,
     new: newWorkout,
-    finishPage,
+    finish,
     pastIndex,
     show,
     delete: deleteWorkout
@@ -19,13 +19,13 @@ function index(req,res) {
 function newWorkout(req,res) {
     const d = req.body.date;
     req.body.date = `${d.substr(5, 2)}-${d.substr(8, 2)}-${d.substr(0, 4)}`;
-    const workout = new Workout(req.body)
+    const workout = new Workout(req.body);
     workout.save(function(err) {
         res.redirect('/workout/finish');
     })
 }
 
-function finishPage(req,res) {
+function finish (req,res) {
     res.render('workout/finish',
     {
         title: 'Workout Completed!'

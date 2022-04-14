@@ -5,7 +5,7 @@ const workoutCtrl = require('../controllers/workout');
 //localhost:3000/workout
 router.get('/new', workoutCtrl.index);
 router.post('/', workoutCtrl.new);
-router.get('/finish', workoutCtrl.finishPage);
+router.get('/finish', workoutCtrl.finish);
 router.get('/history', workoutCtrl.pastIndex);
 router.delete('/:id', workoutCtrl.delete);
 router.get('/:id', workoutCtrl.show);
