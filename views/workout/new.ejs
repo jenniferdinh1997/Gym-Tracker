@@ -7,42 +7,6 @@
     <link rel="stylesheet" href="/stylesheets/new.css">
     <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
     <title> <%= title %> </title>
-
-    <script>
-        const exercisesObject = {
-        'Back': ['Barbell Row', 'Pull Up', 'Lat Pulldown', 'Seated Row'],
-        'Biceps': ['Bicep Curl', 'Hammer Curl', 'Preacher Curl'],
-        'Triceps': ['Tricep Extension', 'Skullcrusher', 'Tricep Dip'],
-        'Shoulders': ['Shoulder Press', 'Lateral Raise'],
-        'Chest': ['Bench Press', 'Chest Fly', 'Push Up'],
-        'Legs': ['Squat', 'Deadlift', 'Hip Thrust', 'Lunge'],
-        'Abs': ['Sit Up'],
-        'Cardio': ['Running', 'Stairmaster', 'Walking', 'Jump Rope']
-        }
-
-    window.onload = function() {
-        let bodyParts = document.querySelectorAll('.bodyPart'); 
-        let exerciseOps = document.querySelectorAll('.exercise');
-
-        for (const x in exercisesObject) {
-            bodyParts.forEach((bodyPart)=>{
-                bodyPart.options[bodyPart.options.length] = new Option(x,x);
-            })
-        }
-
-        function bodyPartOnChangeHandler() {
-            let exerciseOp = this.nextSibling.nextSibling;
-            exerciseOp.length = 1;
-            const y = exercisesObject[this.value];
-            for (let i=0; i<y.length; i++) {
-                exerciseOp.options[exerciseOp.options.length] = new Option(y[i], y[i]);
-                }
-            }
-        bodyParts.forEach((bodyPart) => {
-            bodyPart.onchange = bodyPartOnChangeHandler;
-        })
-    }
-    </script>
 </head>
 
 <body>
@@ -77,58 +41,6 @@
         <input type="text" name="workoutName" id="name" placeholder="Name of Template" autocomplete="off">
 
         <input type="date" name="date">
-
-        <div class="exercise1">
-            <select name="bodyPart" class="bodyPart">
-                <option value="" selected="selected">Body Part</option>
-            </select>
-            <select name="exerciseName" class="exercise">
-                <option value="" selected="selected">Exercise</option>
-            </select>
-            <label for="weight">Weight:</label>
-            <input name="weight" type="number" class="weight" autocomplete="off">
-            <label for="reps">Reps:</label>
-            <input name="reps" type="number" class="reps" autocomplete="off">
-        </div>
-
-        <div class="exercise2">
-            <select name="bodyPart" class="bodyPart">
-                <option value="" selected="selected">Body Part</option>
-            </select>
-            <select name="exerciseName" class="exercise">
-                <option value="" selected="selected">Exercise</option>
-            </select>
-            <label for="weight">Weight:</label>
-            <input name="weight" type="number" class="weight" autocomplete="off">
-            <label for="reps">Reps:</label>
-            <input name="reps" type="number" class="reps" autocomplete="off">
-        </div>
-
-        <div class="exercise3">
-            <select name="bodyPart" class="bodyPart">
-                <option value="" selected="selected">Body Part</option>
-            </select>
-            <select name="exerciseName" class="exercise">
-                <option value="" selected="selected">Exercise</option>
-            </select>
-            <label for="weight">Weight:</label>
-            <input name="weight" type="number" class="weight" autocomplete="off">
-            <label for="reps">Reps:</label>
-            <input name="reps" type="number" class="reps" autocomplete="off">
-        </div>
-
-        <div class="exercise4">
-            <select name="bodyPart" class="bodyPart">
-                <option value="" selected="selected">Body Part</option>
-            </select>
-            <select name="exerciseName" class="exercise">
-                <option value="" selected="selected">Exercise</option>
-            </select>
-            <label for="weight">Weight:</label>
-            <input name="weight" type="number" class="weight" autocomplete="off">
-            <label for="reps">Reps:</label>
-            <input name="reps" type="number" class="reps" autocomplete="off">
-        </div>
 
         <label>How did you feel after?</label>
         <div class="rating">

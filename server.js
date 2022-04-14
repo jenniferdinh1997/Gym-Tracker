@@ -10,6 +10,7 @@ const methodOverride = require('method-override');
 //routes
 const indexRoutes = require('./routes/index');
 const workoutRoutes = require('./routes/workout');
+const exerciseRoutes = require('./routes/exercise');
 
 // load the env consts
 require('dotenv').config();
@@ -55,6 +56,7 @@ app.use(function (req, res, next) {
 // mount all routes with appropriate base paths
 app.use('/', indexRoutes); //localhost:3000
 app.use('/workout', workoutRoutes);
+app.use('/', exerciseRoutes);
 
 // invalid request, send 404 page
 app.use(function(req, res) {
