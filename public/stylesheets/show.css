@@ -123,6 +123,6 @@ table {
 
 .exercise, .bodyPart, .weight, .reps {
     border: none;
-    font-size: 3vh;
+    font-size: 3 em;
     font-family: 'Fjalla One', sans-serif;
 }
