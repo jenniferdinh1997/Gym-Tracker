@@ -12,13 +12,15 @@ html {
 }
 
 h1 {
-    margin-left: 5%;
+    margin-left: 7%;
     margin-top: 15%;  
+    margin-bottom: 0;
     color: #234567;
+    font-size: 5rem;
 }
 
 h3 {
-    margin-left: 5%;
+    margin-left: 7%;
     color: #3f658a;
 }
 
