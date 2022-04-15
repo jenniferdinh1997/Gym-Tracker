@@ -1,6 +1,10 @@
 # Worth the Weight
 A workout tracker that allows any gym-goer to record their workouts effortlessly and optimize results. 
 
+## Getting Started
+![home](images/home-page.png)
+![demonstration](images/demonstration.gif)
+
 ## Technologies Used
 * HTML
 * CSS
