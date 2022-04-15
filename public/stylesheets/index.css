@@ -95,9 +95,5 @@ h3 {
 #menu {
     display: flex;
     flex-direction: column;
-    margin-left: 5%;
-}
-
-p {
-    margin-left: 5%;
+    margin-left: 7%;
 }

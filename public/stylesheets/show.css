@@ -75,6 +75,7 @@ h1 {
 
 h3 {
     text-align: center;
+    font-size: 3vh;
 }
 
 input[type=submit], .edit {
@@ -122,4 +123,6 @@ table {
 
 .exercise, .bodyPart, .weight, .reps {
     border: none;
+    font-size: 3vh;
+    font-family: 'Fjalla One', sans-serif;
 }
