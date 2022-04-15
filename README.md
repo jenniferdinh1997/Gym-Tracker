@@ -1,5 +1,17 @@
-# Gym Tracker
-A workout tracker that allows any gym-goer to record their workouts effortlessly and optimize results.
+# Worth the Weight
+A workout tracker that allows any gym-goer to record their workouts effortlessly and optimize results. 
+
+## Technologies Used
+* HTML
+* CSS
+* Javascript
+* Express.js
+* Node.js
+* MongoDB/Mongoose
+* Passport
+* EJS
+* Heroku
+* Google OAuth 2.0
 
 ### Wireframe and ERD
 ![wireframe](images/wireframe.png)
