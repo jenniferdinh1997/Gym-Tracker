@@ -1,9 +1,8 @@
 # Worth the Weight
-A workout tracker that allows any gym-goer to record their workouts effortlessly and optimize results. 
+A workout tracker that allows any gym-goer to record their workouts effortlessly and optimize results. No matter what your goals are at the gym, it's hard to figure out if you're lifting heavier or building endurance if you don't know how much you're lifting each week and whether or not you improved from the weeks before. This is a full-stack application that allows a user to log in and record everything in their gym session from the exercises performed, the weight and reps of each set, and even how they felt after each session. 
 
 ## Getting Started
-This is a full-stack application that allows a user to log in and record everything in their gym session from the exercises performed, the weight and reps of each set, and even how they felt after each session. 
-
+[Link to App](https://worth-the-weight.herokuapp.com/)
 ![home](images/home-page.png)
 ![demonstration](images/demonstration.gif)
 
