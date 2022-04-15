@@ -119,3 +119,7 @@ table {
     flex-direction: row;
     justify-content: space-evenly;
 }
+
+.exercise, .bodyPart, .weight, .reps {
+    border: none;
+}

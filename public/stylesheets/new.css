@@ -98,7 +98,38 @@ input[type=submit] {
     flex-direction: column;
 }
 
+#name {
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 20px;
+    border: none;
+    width: 40%;
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 1.5rem;
+}
+
 .rating {
     margin-bottom: 20px;
     margin-top: 20px;
+    padding: 20px;
 }
+
+.rating label {
+    display: inline-block;
+    text-align: center;
+    margin: 0 0.2em;
+}
+
+.rating label input[type=radio] {
+    display: block;
+    margin: 0.5em auto;
+}
+
+input[type=date] {
+    margin: 0 auto;
+    border: none;
+    width: 20%;
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 1rem;
+}
+

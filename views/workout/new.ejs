@@ -31,32 +31,48 @@
             </button>
         </a>
 
+        <a href="/logout">
+            <button class="enter">
+                <span>Log Out</span>
+                <svg viewBox="0 0 13 10" height="10px" width="15px">
+                <path d="M1,5 L11,5"></path>
+                <polyline points="8 1 12 5 8 9"></polyline>
+                </svg>
+            </button>
+        </a>
+
         <img src="https://cdn-icons-png.flaticon.com/512/2307/2307887.png" width="80">
     </nav>
 
     <h1>Start a Workout</h1>
 
+    <% if (user) { %> 
     <form action="/workout" method="POST" autocomplete="off" id="addWork">
-        <label for="name">Name:</label>
-        <input type="text" name="workoutName" id="name" placeholder="Name of Template" autocomplete="off">
+        <input type="text" name="workoutName" id="name" placeholder="Name of Template i.e Legs, Upper Body" autocomplete="off">
 
         <input type="date" name="date">
 
-        <label>How did you feel after?</label>
         <div class="rating">
-            <label for="star1">1</label>
-            <input id="star1" name="rating" type="radio" value="1"/>
-            <label for="star2">2</label>
-            <input id="star2" name="rating" type="radio" value="2"/>
-            <label for="star3">3</label>
-            <input id="star3" name="rating" type="radio" value="3"/>
-            <label for="star4">4</label>
-            <input id="star4" name="rating" type="radio" value="4"/>
-            <label for="star5">5</label>
-            <input id="star5" name="rating" type="radio" value="5"/>
+            <label>How did you feel after?</label>
+            <label for="star1">1
+                <input id="star1" name="rating" type="radio" value="1"/>
+            </label>
+            <label for="star2">2
+                <input id="star2" name="rating" type="radio" value="2"/>
+            </label>
+            <label for="star3">3
+                <input id="star3" name="rating" type="radio" value="3"/>
+            </label>
+            <label for="star4">4
+                <input id="star4" name="rating" type="radio" value="4"/>
+            </label>
+            <label for="star5">5
+                <input id="star5" name="rating" type="radio" value="5"/>
+            </label>
         </div>
         <input type="submit" value="Finish Workout">
     </form>
+    <% } %> 
     
 </body>
 </html>

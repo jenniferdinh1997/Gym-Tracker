@@ -29,13 +29,24 @@
                 </svg>
             </button>
         </a>
+
+        <a href="/logout">
+            <button class="enter">
+                <span>Log Out</span>
+                <svg viewBox="0 0 13 10" height="10px" width="15px">
+                <path d="M1,5 L11,5"></path>
+                <polyline points="8 1 12 5 8 9"></polyline>
+                </svg>
+            </button>
+        </a>
+        
         <img src="https://cdn-icons-png.flaticon.com/512/2307/2307887.png" width="80">
     </nav>
 
-    <p>Streak: ___ Weeks</p>
     <h1>History</h1>
 
-    <table>
+    <% if (workout.length) { %> 
+    <table id="total">
         <% workout.forEach(function(w) { %>
         <tr>
             <td><%= w.date %></td>
@@ -44,6 +55,8 @@
         </tr>
         <% }); %> 
     </table>
-
+    <% } else { %> 
+    <h4>No Workouts Yet</h4>
+    <% } %> 
 </body>
 </html>

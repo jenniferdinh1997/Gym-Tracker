@@ -1,35 +1,21 @@
 const Workout = require('../models/workout');
 
 module.exports = {
-    create,
-    delete: deleteItems
+    create
 }
 
 function create(req,res) {
     Workout.findById(req.params.id, function(err,workout) {
+        req.body.user = req.user._id;
+        req.body.userName = req.user.name;
+        req.body.userAvatar = req.user.avatar;
         workout.exercises.push(req.body);
-        console.log(workout);
         workout.save(function(err) {
             res.render('workout/show',
             {
                 title: 'Workout Details',
                 workout
             });
-        })
-    })
-}
-
-function deleteItems(req,res) {
-    // Workout.findByIdAndDelete(req.params.id, function(err,workout) {
-    //     res.redirect(`workout/${workout._id}`)
-    // })
-    console.log('delete method');
-    Workout.findOne({'exercises._id': req.params.id}, function(err, workout) {
-        console.log('workout found', workout)
-        const exercise = workout.exercises.id(req.params.id)
-        exercise.remove()
-        workout.save(function(err) {
-            res.redirect(`workout/${workout._id}`)
         })
     })
 }
