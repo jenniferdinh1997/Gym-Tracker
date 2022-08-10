@@ -2,52 +2,37 @@ html {
     font-family: 'Fjalla One', sans-serif;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5);
 }
 
-.home {
+nav {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    background-color: white;
 }
 
-.home-text {
-    display: flex;
-    flex-direction: column;
-    width: 70%;
-}
-
-.icon {
-    width: 30%;
-}
-
-.icon img {
-    width: 75%;
-    margin-top: 20%;
-}
-
-h1 {
-    margin-left: 7%;
-    margin-top: 15%;  
-    margin-bottom: 0;
-    color: #234567;
-    font-size: 2em;
-}
-
-h3 {
-    margin-left: 7%;
-    color: #3f658a;
+.left-nav {
     font-size: 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: #234567;
 }
 
-.login {
+.left-nav > img {
+    height: 2.5rem;
+    padding: 4px 12px;
+}
+
+.right-nav {
     display: flex;
-    flex-direction: row-reverse;
     align-items: center;
-    height: 35px;
-  }
-  
-.login img {
-    height: 35px;
+}
+
+.right-nav a {
+    font-size: 1rem;
+    color: #234567;
+    padding: 4px 12px;
 }
 
 .enter {
@@ -109,6 +94,6 @@ h3 {
 
 #menu {
     display: flex;
-    flex-direction: column;
-    margin-left: 7%;
+    flex-direction: row;
+    justify-content: center;
 }

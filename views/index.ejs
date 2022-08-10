@@ -13,22 +13,62 @@
 <body>
     <% if(!user) { %> 
     <nav>
-        <a href="/auth/google" class="login"><img src="https://i.imgur.com/FHjYyi0.png"> LOG IN </a>
+        <div class="left-nav">
+            <img src="https://cdn-icons-png.flaticon.com/512/2307/2307887.png" />
+            <p>Worth the Weight</p>
+        </div>
+        
+        <div class="right-nav">
+            <a href="/auth/google">Log In</a>
+        </div>
     </nav>
+
+    <div class="intro">
+        <div class="slideshow">
+            <div class="slide">
+                <img src="/images/home1.jpg" width="100%">
+            </div>
+
+            <div class="slide">
+                <img src="/images/home2.jpg" width="100%">
+            </div>
+
+            <div class="slide">
+                <img src="/images/home3.jpg" width="100%">
+            </div>
+
+            <div class="slide">
+                <img src="/images/home4.jpg" width="100%">
+            </div>
+
+            <div class="slide">
+                <img src="/images/home5.jpg" width="100%">
+            </div>
+
+            <div class="slide">
+                <img src="/images/home6.jpg" width="100%">
+            </div>
+        </div>
+        <p>A fitness tracking app that will keep you accountable and give results that are worth the <i>weight</i>.</p>
+    </div>
     <% } %> 
 
-    <div class="home">
-        <div class="home-text">
-            <h1>Worth the Weight</h1>
-            <h3>A fitness tracking app that will help keep you accountable</h3>
-            <h3>and give results that are worth the <i>weight</i></h3>
-        </div>
-        <div class="icon">
-            <img src="https://cdn-icons-png.flaticon.com/512/2307/2307887.png" />
-        </div>
-    </div>
-
     <% if(user) { %> 
+        <nav>
+            <div class="left-nav">
+                <img src="https://cdn-icons-png.flaticon.com/512/2307/2307887.png" />
+                <p>Worth the Weight</p>
+            </div>
+            
+            <div class="right-nav">
+                <a href="/auth/google">Log In</a>
+            </div>
+        </nav>
+
+        <div class="intro">
+            <p>A fitness tracking app that will keep you accountable and give results that are worth the <i>weight</i>.</p>
+        </div>
+
         <div id="menu">
             <a href="/workout/new">
                 <button class="enter">
@@ -52,5 +92,22 @@
         </div>
     <% } %> 
  
+<script>
+    let slideIndex = 0;
+    showSlides();
+        
+    function showSlides() {
+        let i;
+        let slides = document.getElementsByClassName("slide");
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {slideIndex = 1}    
+        slides[slideIndex-1].style.display = "block";  
+        setTimeout(showSlides, 2000);
+    }
+</script>
+        
 </body>
 </html>
