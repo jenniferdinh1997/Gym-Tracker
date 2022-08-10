@@ -1,5 +1,8 @@
-var router = require('express').Router();
+const express = require('express');
+const router = require('express').Router();
+const request = require('request');
 const passport = require('passport');
+const rootURL = 'https://wger.de/api/v2';
 
 // The root route renders our only view
 router.get('/', function(req, res, next) {
